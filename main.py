@@ -199,7 +199,7 @@ def main(_user, _passwd, min_1, max_1):
 def get_time():
     url = 'http://quan.suning.com/getSysTime.do'
     response = requests.get(url, headers=headers)
-    t = response['sysTime2']
+    t = response.json()['sysTime2']
     return t
 
 
