@@ -197,9 +197,9 @@ def main(_user, _passwd, min_1, max_1):
 
 # 获取时间戳
 def get_time():
-    url = 'https://api.m.jd.com/client.action?functionId=queryMaterialProducts&client=wh5'
+    url = 'http://quan.suning.com/getSysTime.do'
     response = requests.get(url, headers=headers).json()
-    t = response['currentTime2']
+    t = response['sysTime2']
     return t
 
 
