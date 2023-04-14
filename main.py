@@ -187,7 +187,7 @@ def main(_user, _passwd, min_1, max_1):
         return
     login_token, userid = login(user, password)
     if login_token == 0:
-        print("登陆失败！")
+        print("登陆失败！", user, password)
         return "login fail!"
 
     t = get_time()
