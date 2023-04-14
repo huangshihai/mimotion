@@ -181,15 +181,15 @@ def main(_user, _passwd, min_1, max_1):
     user = str(_user)
     password = str(_passwd)
     step = str(random.randint(min_1, max_1))
+    print(user)
+    print(password)
     print("已设置为随机步数(" + str(min_1) + "~" + str(max_1) + ")")
     if user == '' or password == '':
         print("用户名或密码填写有误！")
         return
-    print("用户:", user)
-    print("密码:", password)
     login_token, userid = login(user, password)
     if login_token == 0:
-        print("登陆失败！", user, password)
+        print("登陆失败！")
         return "login fail!"
 
     t = get_time()
