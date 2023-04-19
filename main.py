@@ -112,8 +112,8 @@ def get_code(location):
 # 登录
 def login(user, password):
     is_phone = False
-    if re.match(r'\d{11}', user):
-        is_phone = True
+    #if re.match(r'\d{11}', user):
+    #    is_phone = True
     if is_phone:
         url1 = "https://api-user.huami.com/registrations/+86" + user + "/tokens"
     else:
