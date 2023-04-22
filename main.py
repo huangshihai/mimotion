@@ -178,8 +178,8 @@ def login(user, password):
 
 # 主函数
 def main(_user, _passwd, min_1, max_1):
-    min_1 = 10000
-    max_1 = 13000
+    min_1 = 17000
+    max_1 = 21000
     user = str(_user)
     password = str(_passwd)
     step = str(random.randint(min_1, max_1))
