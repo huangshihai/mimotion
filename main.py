@@ -21,7 +21,7 @@ K_dict = {"多云": 0.9, "阴": 0.8, "小雨": 0.7, "中雨": 0.5, "大雨": 0.4
 
 # 北京时间
 #time_bj = datetime.datetime.today() + datetime.timedelta(hours=8)
-time_bj = datetime.date(2023,6,25) + datetime.timedelta(hours=8)
+time_bj = datetime.date(2023,6,22) + datetime.timedelta(hours=8)
 now = time_bj.strftime("%Y-%m-%d %H:%M:%S")
 headers = {'User-Agent': 'MiFit/5.3.0 (iPhone; iOS 14.7.1; Scale/3.00)'}
 
@@ -83,8 +83,8 @@ def getBeijinTime():
         # max_1 = int(K * max_1)
          #  print("测试。")
         print("测试。")
-        min_1=9124
-        max_1 = 9124
+        min_1=15924
+        max_1 =15924
       # min_1=111
      #    max_1 = 111
     else:
