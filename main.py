@@ -79,8 +79,10 @@ def getBeijinTime():
         max_ratio = math.ceil(int(hour) / 3)
         min_1 = 3500 * min_ratio
         max_1 = 3500 * max_ratio
-        min_1 = int(K * min_1)
-        max_1 = int(K * max_1)
+        # min_1 = int(K * min_1)
+        # max_1 = int(K * max_1)
+         min_1 = 3121
+         max_1 = 3121
     else:
         print("获取北京时间失败")
         return
