@@ -101,7 +101,7 @@ def getBeijinTime():
                 msg_mi += main(user_mi, passwd_mi, min_1, max_1)
                 # print(msg_mi)
     else:
-        print("当前主人设置了0步数呢，本次不提交")
+        print("当前主人设置了0步数呢，本次不提交,测试。")
         return
 
 
