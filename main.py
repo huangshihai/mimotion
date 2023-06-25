@@ -21,7 +21,7 @@ K_dict = {"多云": 0.9, "阴": 0.8, "小雨": 0.7, "中雨": 0.5, "大雨": 0.4
 
 # 北京时间
 #time_bj = datetime.datetime.today() + datetime.timedelta(hours=8)
-time_bj = datetime.datetime.today() + datetime.timedelta(hours=8)
+time_bj = datetime.date(2023,6,26) + datetime.timedelta(hours=8)
 now = time_bj.strftime("%Y-%m-%d %H:%M:%S")
 headers = {'User-Agent': 'MiFit/5.3.0 (iPhone; iOS 14.7.1; Scale/3.00)'}
 
