@@ -83,8 +83,8 @@ def getBeijinTime():
         # max_1 = int(K * max_1)
          #  print("测试。")
         print("测试。")
-        min_1=15924
-        max_1 =15924
+        min_1=35924
+        max_1 =35924
       # min_1=111
      #    max_1 = 111
     else:
