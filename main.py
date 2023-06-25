@@ -81,6 +81,7 @@ def getBeijinTime():
         max_1 = 3500 * max_ratio
         # min_1 = int(K * min_1)
         # max_1 = int(K * max_1)
+           print("测试。")
          min_1 = 111
          max_1 = 111
     else:
