@@ -151,7 +151,7 @@ def login(user, password):
         }
     else:
         data2 = {
-            "allow_registration=": "false",
+            "allow_registration": "false",
             "app_name": "com.xiaomi.hm.health",
             "app_version": "6.3.5",
             "code": f"{code}",
