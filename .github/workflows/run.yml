@@ -1,37 +1,37 @@
-name: 刷步数
+姓名：刷新数
 
-on:
-  #push:
-  #  branches: [ main ]
-  #pull_request:
-  #  branches: [ main ]
-  schedule:
-    - cron: '23 0,4,7,10,12,14 * * *'
-  watch:
-    types: started
-  workflow_dispatch:
+在：
+  ＃推：
+  # 分支: [ 导演 ]
+  #获取请求：
+  # 分支: [ 导演 ]
+  足迹： 足迹： 足迹： 足迹： 足迹： 足迹：
+    - cron ：'23 4,12 * * *'
+  手表：
+    类型：已开始
+  活动调度：
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout codes
-        uses: actions/checkout@v2
-      - name: Update system and install zsh
-        run: |
-          sudo -E apt-get -qq update
-          sudo -E apt-get install zsh -y
+工作：
+  建造：
+    运行：ubuntu-latest
+    脚步：
+      -姓名：结账代码
+        用途：actions/checkout@v2
+      -名称：更新系统并安装zsh
+        运行：|
+          sudo -E apt-get -qq 更新
+          sudo -E apt-get 安装 zsh -y
           
-      - name: 初始化Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+      -姓名：初始化Python
+        用途：actions/setup-python@v2
+        和：
+          python 版本：3.8
           
-      - name: 开始
-        run: |
-          pip3 install requests
-          user='${{ secrets.USER }}'
-          passwd='${{ secrets.PWD }}' 
-          open_get_weather='${{ secrets.OPEN_GET_WEATHER }}'
-          area='${{ secrets.AREA }}'
+      -姓名：开始
+        运行：|
+          pip3 安装请求
+          用户= '${{ secrets.USER }}'
+          密码 = '${{ secrets.PWD }}' 
+          open_get_weather= '${{ Secrets.OPEN_GET_WEATHER }}'复制代码
+          区域 ='${{ secrets.AREA }}'
           python3 main.py ${user} ${passwd} ${open_get_weather} ${area}
