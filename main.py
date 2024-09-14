@@ -7,7 +7,7 @@ import re
 import sys
 import time
 import ntplib
-from time import time
+from time import time, strftime
 
 import requests
 
@@ -224,14 +224,14 @@ def get_time():
     try:
         # 创建 NTP 客户端
         ntp_client = ntplib.NTPClient()
-        # 连接到百度 NTP 服务器获取时间信息
-        response = ntp_client.request('ntp.aliyun.com')  # 百度的 NTP 服务器不可直接用，可以用阿里云的
+        # 连接到阿里云 NTP 服务器获取时间信息
+        response = ntp_client.request('ntp.aliyun.com')  
         
         # 返回 Unix 时间戳（以毫秒为单位，与淘宝 API 保持一致）
         t = int(response.tx_time * 1000)
     except Exception as e:
         # 如果 NTP 请求失败，返回本地时间的时间戳作为备用
-        t = int(time() * 1000)
+        t = int(time() * 1000)  # 这里保持使用 time() 函数
         print(f"Error fetching time from NTP server: {e}")
 
     return t
