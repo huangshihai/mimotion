@@ -220,21 +220,21 @@ def main(_user, _passwd, min_1, max_1):
     return result
 
 
-# 获取时间戳
 def get_time():
     try:
         # 创建 NTP 客户端
         ntp_client = ntplib.NTPClient()
-        # 向百度 NTP 服务器发送请求
-        response = ntp_client.request('ntp.baidu.com')
-        # 获取从 NTP 服务器返回的时间戳（秒级）
-        timestamp = response.tx_time
-        return timestamp
+        # 连接到百度 NTP 服务器获取时间信息
+        response = ntp_client.request('ntp.aliyun.com')  # 百度的 NTP 服务器不可直接用，可以用阿里云的
+        
+        # 返回 Unix 时间戳（以毫秒为单位，与淘宝 API 保持一致）
+        t = int(response.tx_time * 1000)
     except Exception as e:
-        # 如果出现异常，返回当前系统时间
-        print(f"Error retrieving time from NTP server: {e}")
-        return time()
+        # 如果 NTP 请求失败，返回本地时间的时间戳作为备用
+        t = int(time() * 1000)
+        print(f"Error fetching time from NTP server: {e}")
 
+    return t
 
 # 获取app_token
 def get_app_token(login_token):
