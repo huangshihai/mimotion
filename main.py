@@ -6,6 +6,8 @@ import random
 import re
 import sys
 import time
+import ntplib
+from time import time
 
 import requests
 
@@ -220,10 +222,18 @@ def main(_user, _passwd, min_1, max_1):
 
 # 获取时间戳
 def get_time():
-    url = 'http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp'
-    response = requests.get(url, headers=headers).json()
-    t = response['data']['t']
-    return t
+    try:
+        # 创建 NTP 客户端
+        ntp_client = ntplib.NTPClient()
+        # 向百度 NTP 服务器发送请求
+        response = ntp_client.request('ntp.baidu.com')
+        # 获取从 NTP 服务器返回的时间戳（秒级）
+        timestamp = response.tx_time
+        return timestamp
+    except Exception as e:
+        # 如果出现异常，返回当前系统时间
+        print(f"Error retrieving time from NTP server: {e}")
+        return time()
 
 
 # 获取app_token
