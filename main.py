@@ -7,7 +7,6 @@ import re
 import sys
 import time
 import ntplib
-from time import time, strftime
 
 import requests
 
