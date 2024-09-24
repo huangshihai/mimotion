@@ -76,8 +76,8 @@ def getBeijinTime():
         hour = find.group(1)
         min_ratio = max(math.ceil((int(hour) / 3) - 1), 0)
         max_ratio = math.ceil(int(hour) / 3)
-        min_1 = 3000 * min_ratio
-        max_1 = 3000 * max_ratio
+        min_1 = 3500 * min_ratio
+        max_1 = 3500 * max_ratio
         min_1 = int(K * min_1)
         max_1 = int(K * max_1)
     else:
@@ -151,7 +151,7 @@ def login(user, password):
         }
     else:
         data2 = {
-            "allow_registration=": "false",
+            "allow_registration": "false",
             "app_name": "com.xiaomi.hm.health",
             "app_version": "6.3.5",
             "code": f"{code}",
@@ -220,9 +220,9 @@ def main(_user, _passwd, min_1, max_1):
 
 # 获取时间戳
 def get_time():
-    url = 'http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp'
+    url = 'http://worldtimeapi.org/api/timezone/Asia/Shanghai'
     response = requests.get(url, headers=headers).json()
-    t = response['data']['t']
+    t = str(response['unixtime'])+'000'
     return t
 
 
