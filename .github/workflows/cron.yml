@@ -15,7 +15,16 @@ jobs:
           token: ${{ secrets.PAT }} #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11,需要repo和workflow权限
       - name: random cron
         run: |
-          sed -i -E "s/(- cron: ')[0-9]+( [^[:space:]]+ \* \* \*')/\1$(($RANDOM % 59))\2/g" .github/workflows/run.yml
+          # 提取当前cron分钟数
+          current_minute=$(grep -oP "(?<=- cron: ')\d+" .github/workflows/run.yml)
+          
+          # 生成新分钟数（范围0-59），直到与当前不同
+          new_minute=$((RANDOM % 60))
+          while [ "$new_minute" -eq "$current_minute" ]; do
+            new_minute=$((RANDOM % 60))
+          done
+              # 替换cron分钟数
+          sed -i -E "s/(- cron: ')[0-9]+( [^[:space:]]+ \* \* \*')/\1$new_minute\2/g" .github/workflows/run.yml
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
