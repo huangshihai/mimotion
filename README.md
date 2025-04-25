@@ -1,5 +1,5 @@
 # mimotion
-![ 刷步数](https://github.com/huangshihai/mimotion/actions/workflows/run.yml/badge.svg)
+![ 刷步数](https://github.com/huangshihai/mimotion/actions/workflows/brush_step.yml/badge.svg)
 [![GitHub forks](https://img.shields.io/github/forks/huangshihai/mimotion?style=flat-square)](https://github.com/huangsh/mimotion/network)
 [![GitHub stars](https://img.shields.io/github/stars/huangshihai/mimotion?style=flat-square)](https://github.com/huangshihai/mimotion/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/huangshihai/mimotion?style=flat-square)](https://github.com/huangshihai/mimotion/issues)
@@ -35,7 +35,7 @@
 
 ### 四、自定义启动时间
 
-编辑 **.github/workflows/run.yml**
+编辑 **.github/workflows/brush_step.yml**
 修改其中**cron**语句的判断时间为UTC时间，即**北京时间-8**，如北京时间8点为UTC时间0点，需要运行的时间-8就是UTC时间
 
 ### 五、感谢列表
@@ -43,7 +43,7 @@
 
 ## 注意事项
 
-1. 每天运行六次，整由run.yml中的cron控制，分钟为随机值
+1. 每天运行六次，整由brush_step.yml中的cron控制，分钟为随机值
 
 2. 多账户的数量和密码请一定要对上 不然无法使用!!!
 

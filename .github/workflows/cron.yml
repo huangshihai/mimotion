@@ -16,7 +16,7 @@ jobs:
       - name: random cron
         run: |
           # 提取当前cron分钟数
-          current_minute=$(grep -oP "(?<=- cron: ')\d+" .github/workflows/run.yml)
+          current_minute=$(grep -oP "(?<=- cron: ')\d+" .github/workflows/brush_step.yml)
           
           # 生成新分钟数（范围0-59），直到与当前不同
           new_minute=$((RANDOM % 60))
@@ -24,7 +24,7 @@ jobs:
             new_minute=$((RANDOM % 60))
           done
               # 替换cron分钟数
-          sed -i -E "s/(- cron: ')[0-9]+( [^[:space:]]+ \* \* \*')/\1$new_minute\2/g" .github/workflows/run.yml
+          sed -i -E "s/(- cron: ')[0-9]+( [^[:space:]]+ \* \* \*')/\1$new_minute\2/g" .github/workflows/brush_step.yml
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
