@@ -1,4 +1,4 @@
-name: 刷步数
+name: brush step
 
 on:
   #push:
