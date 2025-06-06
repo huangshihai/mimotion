@@ -56,3 +56,5 @@
 6. 请各位在使用时Fork[主分支](https://github.com/huangshihai/mimotion/)，防止出现不必要的bug.
 
 7. 请注意，账号不是 [小米账号]，而是 [小米运动] 的账号。
+
+[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
