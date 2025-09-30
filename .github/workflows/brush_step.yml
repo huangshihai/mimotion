@@ -29,7 +29,7 @@ jobs:
           
       - name: 开始
         run: |
-          pip3 install requests pytz
+          pip3 install requests pytz pycryptodome
           user='${{ secrets.USER }}'
           passwd='${{ secrets.PWD }}' 
           open_get_weather='${{ secrets.OPEN_GET_WEATHER }}'
