@@ -6,14 +6,14 @@ on:
   #pull_request:
   #  branches: [ main ]
   schedule:
-    - cron: '12 6,8,9,11 * * *'
+    - cron: '9 6,8,9,11 * * *'
   watch:
     types: started
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04   # 重点！！这里不再写 ubuntu-latest，固定24.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout codes
         uses: actions/checkout@v4
@@ -35,4 +35,5 @@ jobs:
           passwd='${{ secrets.PWD }}' 
           open_get_weather='${{ secrets.OPEN_GET_WEATHER }}'
           area='${{ secrets.AREA }}'
-          python3 main.py ${user} ${passwd} ${open_get_weather} ${area}
+          step='${{ secrets.STEP }}'
+          python3 main.py ${user} ${passwd} ${open_get_weather} ${area} ${step}
